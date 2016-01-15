@@ -21,7 +21,7 @@ public class CMinusParser extends Parser {
 		DIVIDE=10, LESS=11, LESS_EQUAL=12, GREATER=13, GREATER_EQUAL=14, EQUAL=15, 
 		NOT_EQUAL=16, ASSIGN=17, SEMICOLON=18, COMMA=19, LEFT_PAREN=20, RIGHT_PAREN=21, 
 		LEFT_BRACKET=22, RIGHT_BRACKET=23, LEFT_BRACE=24, RIGHT_BRACE=25, NUM=26, 
-		ID=27, WHITESPACE=28, NEWLINE=29, BLOCKCOMMENT=30;
+		IDENTIFIER=27, WHITESPACE=28, NEWLINE=29, BLOCKCOMMENT=30;
 	public static final int
 		RULE_program = 0, RULE_declaration_list = 1, RULE_declaration = 2, RULE_var_declaration = 3, 
 		RULE_type_specifier = 4, RULE_fun_declaration = 5, RULE_params = 6, RULE_param_list = 7, 
@@ -48,7 +48,7 @@ public class CMinusParser extends Parser {
 		null, "ELSE", "IF", "INT", "RETURN", "VOID", "WHILE", "PLUS", "MINUS", 
 		"TIMES", "DIVIDE", "LESS", "LESS_EQUAL", "GREATER", "GREATER_EQUAL", "EQUAL", 
 		"NOT_EQUAL", "ASSIGN", "SEMICOLON", "COMMA", "LEFT_PAREN", "RIGHT_PAREN", 
-		"LEFT_BRACKET", "RIGHT_BRACKET", "LEFT_BRACE", "RIGHT_BRACE", "NUM", "ID", 
+		"LEFT_BRACKET", "RIGHT_BRACKET", "LEFT_BRACE", "RIGHT_BRACE", "NUM", "IDENTIFIER", 
 		"WHITESPACE", "NEWLINE", "BLOCKCOMMENT"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -273,7 +273,7 @@ public class CMinusParser extends Parser {
 		public Type_specifierContext type_specifier() {
 			return getRuleContext(Type_specifierContext.class,0);
 		}
-		public TerminalNode ID() { return getToken(CMinusParser.ID, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode SEMICOLON() { return getToken(CMinusParser.SEMICOLON, 0); }
 		public TerminalNode LEFT_BRACKET() { return getToken(CMinusParser.LEFT_BRACKET, 0); }
 		public TerminalNode NUM() { return getToken(CMinusParser.NUM, 0); }
@@ -304,7 +304,7 @@ public class CMinusParser extends Parser {
 				setState(74);
 				type_specifier();
 				setState(75);
-				match(ID);
+				match(IDENTIFIER);
 				setState(76);
 				match(SEMICOLON);
 				}
@@ -315,7 +315,7 @@ public class CMinusParser extends Parser {
 				setState(78);
 				type_specifier();
 				setState(79);
-				match(ID);
+				match(IDENTIFIER);
 				setState(80);
 				match(LEFT_BRACKET);
 				setState(81);
@@ -387,7 +387,7 @@ public class CMinusParser extends Parser {
 		public Type_specifierContext type_specifier() {
 			return getRuleContext(Type_specifierContext.class,0);
 		}
-		public TerminalNode ID() { return getToken(CMinusParser.ID, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode LEFT_PAREN() { return getToken(CMinusParser.LEFT_PAREN, 0); }
 		public ParamsContext params() {
 			return getRuleContext(ParamsContext.class,0);
@@ -419,7 +419,7 @@ public class CMinusParser extends Parser {
 			setState(89);
 			type_specifier();
 			setState(90);
-			match(ID);
+			match(IDENTIFIER);
 			setState(91);
 			match(LEFT_PAREN);
 			setState(92);
@@ -576,7 +576,7 @@ public class CMinusParser extends Parser {
 		public Type_specifierContext type_specifier() {
 			return getRuleContext(Type_specifierContext.class,0);
 		}
-		public TerminalNode ID() { return getToken(CMinusParser.ID, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode LEFT_BRACKET() { return getToken(CMinusParser.LEFT_BRACKET, 0); }
 		public TerminalNode RIGHT_BRACKET() { return getToken(CMinusParser.RIGHT_BRACKET, 0); }
 		public ParamContext(ParserRuleContext parent, int invokingState) {
@@ -605,7 +605,7 @@ public class CMinusParser extends Parser {
 				setState(111);
 				type_specifier();
 				setState(112);
-				match(ID);
+				match(IDENTIFIER);
 				}
 				break;
 			case 2:
@@ -614,7 +614,7 @@ public class CMinusParser extends Parser {
 				setState(114);
 				type_specifier();
 				setState(115);
-				match(ID);
+				match(IDENTIFIER);
 				setState(116);
 				match(LEFT_BRACKET);
 				setState(117);
@@ -871,7 +871,7 @@ public class CMinusParser extends Parser {
 			case SEMICOLON:
 			case LEFT_PAREN:
 			case NUM:
-			case ID:
+			case IDENTIFIER:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(142);
@@ -948,7 +948,7 @@ public class CMinusParser extends Parser {
 			switch (_input.LA(1)) {
 			case LEFT_PAREN:
 			case NUM:
-			case ID:
+			case IDENTIFIER:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(149);
@@ -1235,7 +1235,7 @@ public class CMinusParser extends Parser {
 	}
 
 	public static class VarContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(CMinusParser.ID, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode LEFT_BRACKET() { return getToken(CMinusParser.LEFT_BRACKET, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -1265,14 +1265,14 @@ public class CMinusParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(192);
-				match(ID);
+				match(IDENTIFIER);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(193);
-				match(ID);
+				match(IDENTIFIER);
 				setState(194);
 				match(LEFT_BRACKET);
 				setState(195);
@@ -1732,7 +1732,7 @@ public class CMinusParser extends Parser {
 	}
 
 	public static class CallContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(CMinusParser.ID, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode LEFT_PAREN() { return getToken(CMinusParser.LEFT_PAREN, 0); }
 		public ArgsContext args() {
 			return getRuleContext(ArgsContext.class,0);
@@ -1759,7 +1759,7 @@ public class CMinusParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(246);
-			match(ID);
+			match(IDENTIFIER);
 			setState(247);
 			match(LEFT_PAREN);
 			setState(248);
@@ -1805,7 +1805,7 @@ public class CMinusParser extends Parser {
 			switch (_input.LA(1)) {
 			case LEFT_PAREN:
 			case NUM:
-			case ID:
+			case IDENTIFIER:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(251);

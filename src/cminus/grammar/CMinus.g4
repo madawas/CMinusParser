@@ -18,8 +18,8 @@ declaration
     ;
 
 var_declaration
-    : type_specifier ID SEMICOLON
-    | type_specifier ID LEFT_BRACKET NUM RIGHT_BRACKET SEMICOLON
+    : type_specifier IDENTIFIER SEMICOLON
+    | type_specifier IDENTIFIER LEFT_BRACKET NUM RIGHT_BRACKET SEMICOLON
     ;
 
 type_specifier
@@ -28,7 +28,7 @@ type_specifier
     ;
 
 fun_declaration
-    : type_specifier ID LEFT_PAREN params RIGHT_PAREN compound_stmt
+    : type_specifier IDENTIFIER LEFT_PAREN params RIGHT_PAREN compound_stmt
     ;
 
 params
@@ -41,8 +41,8 @@ param_list
     ;
 
 param
-    : type_specifier ID
-    | type_specifier ID LEFT_BRACKET RIGHT_BRACKET
+    : type_specifier IDENTIFIER
+    | type_specifier IDENTIFIER LEFT_BRACKET RIGHT_BRACKET
     ;
 
 compound_stmt
@@ -91,7 +91,7 @@ expression
     | simple_expression
     ;
 
-var : ID | ID LEFT_BRACKET expression RIGHT_BRACKET
+var : IDENTIFIER | IDENTIFIER LEFT_BRACKET expression RIGHT_BRACKET
     ;
 
 simple_expression
@@ -128,7 +128,7 @@ factor
     ;
 
 call
-    : ID LEFT_PAREN args RIGHT_PAREN
+    : IDENTIFIER LEFT_PAREN args RIGHT_PAREN
     ;
 
 args
@@ -178,7 +178,7 @@ RIGHT_BRACE   : '}';
 fragment LETTER : [a-zA-Z];
 fragment DIGIT : [0-9];
 NUM : (DIGIT)(DIGIT)*;
-ID : (LETTER)(LETTER)*;
+IDENTIFIER : (LETTER)(LETTER)*;
 
 //C-Minus whitespaces and comments
 WHITESPACE
