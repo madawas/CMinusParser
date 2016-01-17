@@ -10,16 +10,17 @@
 1. Locate CMinusParser.jar
 
 2. Run the jar using following command
-```shell
-java -jar CMinusParser.jar <PATH_TO_SOURCE>
-```
-e.g.  
-```shell
-java -jar CMinusParser.jar /home/{$user}/test.cmin
-```
+    ```shell
+    java -jar CMinusParser.jar <PATH_TO_SOURCE>
+    ```
+    e.g.  
+    ```shell
+    java -jar CMinusParser.jar /home/{$user}/test.cmin
+    ```
 
 3. Other options
-provide `--gen-ast` as the second argument to display the AST
-```shell	
-java -jar CMinusParser.jar <PATH_TO_SOURCE> --gen-ast
-```
+    
+    provide `--gen-ast` as the second argument to display the AST
+    ```shell	
+    java -jar CMinusParser.jar <PATH_TO_SOURCE> --gen-ast
+    ```
