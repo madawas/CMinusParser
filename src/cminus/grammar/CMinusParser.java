@@ -28,15 +28,16 @@ public class CMinusParser extends Parser {
 		RULE_param = 8, RULE_compound_stmt = 9, RULE_local_declarations = 10, 
 		RULE_statement_list = 11, RULE_statement = 12, RULE_expression_stmt = 13, 
 		RULE_selection_stmt = 14, RULE_iteration_stmt = 15, RULE_return_stmt = 16, 
-		RULE_expression = 17, RULE_var = 18, RULE_simple_expression = 19, RULE_relop = 20, 
-		RULE_additive_expression = 21, RULE_addop = 22, RULE_term = 23, RULE_mulop = 24, 
-		RULE_factor = 25, RULE_call = 26, RULE_args = 27, RULE_arg_list = 28;
+		RULE_expression = 17, RULE_variable = 18, RULE_simple_expression = 19, 
+		RULE_relop = 20, RULE_additive_expression = 21, RULE_addop = 22, RULE_term = 23, 
+		RULE_mulop = 24, RULE_factor = 25, RULE_call = 26, RULE_args = 27, RULE_arg_list = 28;
 	public static final String[] ruleNames = {
 		"program", "declaration_list", "declaration", "var_declaration", "type_specifier", 
 		"fun_declaration", "params", "param_list", "param", "compound_stmt", "local_declarations", 
 		"statement_list", "statement", "expression_stmt", "selection_stmt", "iteration_stmt", 
-		"return_stmt", "expression", "var", "simple_expression", "relop", "additive_expression", 
-		"addop", "term", "mulop", "factor", "call", "args", "arg_list"
+		"return_stmt", "expression", "variable", "simple_expression", "relop", 
+		"additive_expression", "addop", "term", "mulop", "factor", "call", "args", 
+		"arg_list"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -1173,8 +1174,8 @@ public class CMinusParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public VarContext var() {
-			return getRuleContext(VarContext.class,0);
+		public VariableContext variable() {
+			return getRuleContext(VariableContext.class,0);
 		}
 		public TerminalNode ASSIGN() { return getToken(CMinusParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
@@ -1207,7 +1208,7 @@ public class CMinusParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(185);
-				var();
+				variable();
 				setState(186);
 				match(ASSIGN);
 				setState(187);
@@ -1234,30 +1235,30 @@ public class CMinusParser extends Parser {
 		return _localctx;
 	}
 
-	public static class VarContext extends ParserRuleContext {
+	public static class VariableContext extends ParserRuleContext {
 		public TerminalNode IDENTIFIER() { return getToken(CMinusParser.IDENTIFIER, 0); }
 		public TerminalNode LEFT_BRACKET() { return getToken(CMinusParser.LEFT_BRACKET, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode RIGHT_BRACKET() { return getToken(CMinusParser.RIGHT_BRACKET, 0); }
-		public VarContext(ParserRuleContext parent, int invokingState) {
+		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_var; }
+		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CMinusListener ) ((CMinusListener)listener).enterVar(this);
+			if ( listener instanceof CMinusListener ) ((CMinusListener)listener).enterVariable(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CMinusListener ) ((CMinusListener)listener).exitVar(this);
+			if ( listener instanceof CMinusListener ) ((CMinusListener)listener).exitVariable(this);
 		}
 	}
 
-	public final VarContext var() throws RecognitionException {
-		VarContext _localctx = new VarContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_var);
+	public final VariableContext variable() throws RecognitionException {
+		VariableContext _localctx = new VariableContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_variable);
 		try {
 			setState(198);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
@@ -1659,8 +1660,8 @@ public class CMinusParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode RIGHT_PAREN() { return getToken(CMinusParser.RIGHT_PAREN, 0); }
-		public VarContext var() {
-			return getRuleContext(VarContext.class,0);
+		public VariableContext variable() {
+			return getRuleContext(VariableContext.class,0);
 		}
 		public CallContext call() {
 			return getRuleContext(CallContext.class,0);
@@ -1701,7 +1702,7 @@ public class CMinusParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(241);
-				var();
+				variable();
 				}
 				break;
 			case 3:

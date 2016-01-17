@@ -232,13 +232,13 @@ public class CMinusBaseListener implements CMinusListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar(CMinusParser.VarContext ctx) { }
+	@Override public void enterVariable(CMinusParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar(CMinusParser.VarContext ctx) { }
+	@Override public void exitVariable(CMinusParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

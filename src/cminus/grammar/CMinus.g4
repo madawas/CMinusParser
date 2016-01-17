@@ -87,11 +87,12 @@ return_stmt
     ;
 
 expression
-    : var ASSIGN expression
+    : variable ASSIGN expression
     | simple_expression
     ;
 
-var : IDENTIFIER | IDENTIFIER LEFT_BRACKET expression RIGHT_BRACKET
+variable
+    : IDENTIFIER | IDENTIFIER LEFT_BRACKET expression RIGHT_BRACKET
     ;
 
 simple_expression
@@ -105,7 +106,7 @@ relop
 
 additive_expression
     : additive_expression addop term
-    |term
+    | term
     ;
 
 addop
@@ -124,7 +125,7 @@ mulop
 
 factor
     : LEFT_PAREN expression RIGHT_PAREN
-    | var | call | NUM
+    | variable | call | NUM
     ;
 
 call

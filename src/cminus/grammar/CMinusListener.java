@@ -188,15 +188,15 @@ public interface CMinusListener extends ParseTreeListener {
 	 */
 	void exitExpression(CMinusParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CMinusParser#var}.
+	 * Enter a parse tree produced by {@link CMinusParser#variable}.
 	 * @param ctx the parse tree
 	 */
-	void enterVar(CMinusParser.VarContext ctx);
+	void enterVariable(CMinusParser.VariableContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CMinusParser#var}.
+	 * Exit a parse tree produced by {@link CMinusParser#variable}.
 	 * @param ctx the parse tree
 	 */
-	void exitVar(CMinusParser.VarContext ctx);
+	void exitVariable(CMinusParser.VariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CMinusParser#simple_expression}.
 	 * @param ctx the parse tree
