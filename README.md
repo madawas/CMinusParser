@@ -19,7 +19,7 @@ java -jar CMinusParser.jar /home/{$user}/test.cmin
 ```
 
 3. Other options
-provide --gen-ast as the second argument to display the AST
+provide `--gen-ast` as the second argument to display the AST
 ```shell	
 java -jar CMinusParser.jar <PATH_TO_SOURCE> --gen-ast
 ```
